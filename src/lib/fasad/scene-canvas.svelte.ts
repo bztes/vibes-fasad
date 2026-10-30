@@ -14,20 +14,25 @@ export class SceneCanvas {
 	failed = $state(false);
 	#canvas = $state<HTMLCanvasElement>();
 	#hexes: string;
+	#scene: Scene;
 
 	constructor(
 		input: () => { scene: Scene; colors: PartColors },
 		/** `maxWidth` scales the layers down; `throttle` repaints at most once per frame, e.g. while dragging a colour picker. */
 		{ maxWidth = Infinity, throttle = false } = {}
 	) {
+		// Only the scene, so a colour change doesn't reload the layers.
+		this.#scene = $derived(input().scene);
+
 		this.setup = (element) => {
 			let current = true;
 			this.failed = false;
-			loadLayers(input().scene, maxWidth)
+			loadLayers(this.#scene, maxWidth)
 				.then((loaded) => {
 					if (!current) return;
-					element.width = loaded.source.width;
-					element.height = loaded.source.height;
+					// Resizing clears the canvas, and the same cached layers won't trigger a repaint.
+					if (element.width !== loaded.source.width) element.width = loaded.source.width;
+					if (element.height !== loaded.source.height) element.height = loaded.source.height;
 					this.#canvas = element;
 					this.layers = loaded;
 				})
