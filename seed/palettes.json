@@ -1,0 +1,172 @@
+{
+	"version": 2,
+	"groups": [
+		{
+			"name": "Ottosson – Klassiska kulörkombinationer"
+		}
+	],
+	"palettes": [
+		{
+			"name": "Kittvitt",
+			"group": "Ottosson – Klassiska kulörkombinationer",
+			"colors": {
+				"facade": "#fcf5ea",
+				"trim": "#fcf5ea",
+				"window": "#fcf5ea"
+			}
+		},
+		{
+			"name": "Vit gräddton · Bladgrön",
+			"group": "Ottosson – Klassiska kulörkombinationer",
+			"colors": {
+				"facade": "#f4f1eb",
+				"trim": "#758b63",
+				"window": "#758b63"
+			}
+		},
+		{
+			"name": "Vetegrå/T-Z 50/50 · Övedsgrön",
+			"group": "Ottosson – Klassiska kulörkombinationer",
+			"colors": {
+				"facade": "#d5d0ba",
+				"trim": "#626e4e",
+				"window": "#626e4e"
+			}
+		},
+		{
+			"name": "Vetegrå · Skruttgrön · Guldockra",
+			"group": "Ottosson – Klassiska kulörkombinationer",
+			"colors": {
+				"facade": "#c6bfa4",
+				"trim": "#4d5842",
+				"window": "#9e7a40"
+			}
+		},
+		{
+			"name": "Ockragul · Kittvitt · Köpenhamnsgrön",
+			"group": "Ottosson – Klassiska kulörkombinationer",
+			"colors": {
+				"facade": "#e4c380",
+				"trim": "#fcf5ea",
+				"window": "#464e3a"
+			}
+		},
+		{
+			"name": "Sandgul · Vit gräddton · Engelskt röd",
+			"group": "Ottosson – Klassiska kulörkombinationer",
+			"colors": {
+				"facade": "#ccb172",
+				"trim": "#f4f1eb",
+				"window": "#8e402d"
+			}
+		},
+		{
+			"name": "Järnmönja · Ardbeg green · Vit gräddton",
+			"group": "Ottosson – Klassiska kulörkombinationer",
+			"colors": {
+				"facade": "#734136",
+				"trim": "#48483b",
+				"window": "#f4f1eb"
+			}
+		},
+		{
+			"name": "Mörk järnoxidröd · Varmgrå · Guldgul",
+			"group": "Ottosson – Klassiska kulörkombinationer",
+			"colors": {
+				"facade": "#793d31",
+				"trim": "#c9c8c2",
+				"window": "#c49d58"
+			}
+		},
+		{
+			"name": "Ardbeg green · Pärlgrå",
+			"group": "Ottosson – Klassiska kulörkombinationer",
+			"colors": {
+				"facade": "#48483b",
+				"trim": "#dcdacb",
+				"window": "#dcdacb"
+			}
+		},
+		{
+			"name": "Umbragrå/Vit titan-zink 25/75 · Umbragrå · Vit titan-zink",
+			"group": "Ottosson – Klassiska kulörkombinationer",
+			"colors": {
+				"facade": "#dbd7d0",
+				"trim": "#bcb6ab",
+				"window": "#fffff9"
+			}
+		},
+		{
+			"name": "Pärlgrå · Grågrön · Rödockra",
+			"group": "Ottosson – Klassiska kulörkombinationer",
+			"colors": {
+				"facade": "#dcdacb",
+				"trim": "#b1b09f",
+				"window": "#935034"
+			}
+		},
+		{
+			"name": "Varmgrå · Vit gräddton · Bergblå",
+			"group": "Ottosson – Klassiska kulörkombinationer",
+			"colors": {
+				"facade": "#c9c8c2",
+				"trim": "#f4f1eb",
+				"window": "#4b5e6e"
+			}
+		},
+		{
+			"name": "Rödockra/T-Z 25/75 · Ljusgrå · Bladgrön",
+			"group": "Ottosson – Klassiska kulörkombinationer",
+			"colors": {
+				"facade": "#c0835f",
+				"trim": "#e5e5e5",
+				"window": "#758b63"
+			}
+		},
+		{
+			"name": "Ribbangrön · Ardbeg green · Bränd terra",
+			"group": "Ottosson – Klassiska kulörkombinationer",
+			"colors": {
+				"facade": "#cbcea4",
+				"trim": "#48483b",
+				"window": "#7e4833"
+			}
+		},
+		{
+			"name": "Antikgrön · Pärlgrå · Guldockra",
+			"group": "Ottosson – Klassiska kulörkombinationer",
+			"colors": {
+				"facade": "#9a9e82",
+				"trim": "#dcdacb",
+				"window": "#9e7a40"
+			}
+		},
+		{
+			"name": "Mörkgrå · Vit gräddton · Varmgrå",
+			"group": "Ottosson – Klassiska kulörkombinationer",
+			"colors": {
+				"facade": "#40403f",
+				"trim": "#f4f1eb",
+				"window": "#c9c8c2"
+			}
+		},
+		{
+			"name": "Grön umbra · Ljusgrå",
+			"group": "Ottosson – Klassiska kulörkombinationer",
+			"colors": {
+				"facade": "#504f44",
+				"trim": "#e5e5e5",
+				"window": "#e5e5e5"
+			}
+		},
+		{
+			"name": "Bensvart · Ardbeg green · Guldockra",
+			"group": "Ottosson – Klassiska kulörkombinationer",
+			"colors": {
+				"facade": "#161616",
+				"trim": "#48483b",
+				"window": "#9e7a40"
+			}
+		}
+	]
+}

@@ -1,0 +1,280 @@
+{
+	"version": 2,
+	"colors": [
+		{
+			"name": "Vit Puts",
+			"color": "#f2f2f2",
+			"group": "Ottosson Linoljefärg"
+		},
+		{
+			"name": "Antikvit inomhus",
+			"color": "NCS S 0604-Y23R",
+			"group": "Ottosson Linoljefärg"
+		},
+		{
+			"name": "Zinkvitt",
+			"color": "NCS S 0402-Y07R",
+			"group": "Ottosson Linoljefärg"
+		},
+		{
+			"name": "Vit Titan-Zink",
+			"color": "NCS S 0402-Y07R",
+			"group": "Ottosson Linoljefärg"
+		},
+		{
+			"name": "Kittvit",
+			"color": "NCS S 0604-Y26R",
+			"group": "Ottosson Linoljefärg"
+		},
+		{
+			"name": "Vit gräddton",
+			"color": "NCS S 0902-Y25R",
+			"group": "Ottosson Linoljefärg"
+		},
+		{
+			"name": "Ljusgrå",
+			"color": "NCS S 1000-N",
+			"group": "Ottosson Linoljefärg"
+		},
+		{
+			"name": "Pärlgrå",
+			"color": "NCS S 1805-G88Y",
+			"group": "Ottosson Linoljefärg"
+		},
+		{
+			"name": "Varmgrå",
+			"color": "NCS S 2502-Y",
+			"group": "Ottosson Linoljefärg"
+		},
+		{
+			"name": "Vetegrå",
+			"color": "NCS S 2611-Y08R",
+			"group": "Ottosson Linoljefärg"
+		},
+		{
+			"name": "Umbragrå",
+			"color": "NCS S 3005-Y20R",
+			"group": "Ottosson Linoljefärg"
+		},
+		{
+			"name": "Veronagrå",
+			"color": "NCS S 3108-B75G",
+			"group": "Ottosson Linoljefärg"
+		},
+		{
+			"name": "Mellangrå",
+			"color": "NCS S 3402-G50Y",
+			"group": "Ottosson Linoljefärg"
+		},
+		{
+			"name": "Grågrön",
+			"color": "NCS S 3407-G80Y",
+			"group": "Ottosson Linoljefärg"
+		},
+		{
+			"name": "Hastingsgrå",
+			"color": "NCS S 4004-G99Y",
+			"group": "Ottosson Linoljefärg"
+		},
+		{
+			"name": "Silvergrå",
+			"color": "NCS S 4901-B25G",
+			"group": "Ottosson Linoljefärg"
+		},
+		{
+			"name": "Mörkgrå",
+			"color": "NCS S 7601-G37Y",
+			"group": "Ottosson Linoljefärg"
+		},
+		{
+			"name": "Grafit",
+			"color": "NCS S 8400-N",
+			"group": "Ottosson Linoljefärg"
+		},
+		{
+			"name": "Ljusgul",
+			"color": "NCS S 1019-Y25R",
+			"group": "Ottosson Linoljefärg"
+		},
+		{
+			"name": "Solgul",
+			"color": "NCS S 1339-Y09R",
+			"group": "Ottosson Linoljefärg"
+		},
+		{
+			"name": "Ockragul",
+			"color": "NCS S 1530-Y21R",
+			"group": "Ottosson Linoljefärg"
+		},
+		{
+			"name": "Herrgårdsgul",
+			"color": "NCS S 2242-Y19R",
+			"group": "Ottosson Linoljefärg"
+		},
+		{
+			"name": "Sandgul",
+			"color": "NCS S 2431-Y17R",
+			"group": "Ottosson Linoljefärg"
+		},
+		{
+			"name": "Guldgul",
+			"color": "NCS S 2740-Y25R",
+			"group": "Ottosson Linoljefärg"
+		},
+		{
+			"name": "Guldockra",
+			"color": "NCS S 4144-Y27R",
+			"group": "Ottosson Linoljefärg"
+		},
+		{
+			"name": "Abricot Rödockra",
+			"color": "NCS S 4544-Y65R",
+			"group": "Ottosson Linoljefärg"
+		},
+		{
+			"name": "Röd Empir",
+			"color": "NCS S 4053-Y94R",
+			"group": "Ottosson Linoljefärg"
+		},
+		{
+			"name": "Ljus Engelskt Röd",
+			"color": "NCS S 4353-Y73R",
+			"group": "Ottosson Linoljefärg"
+		},
+		{
+			"name": "Engelskt Röd",
+			"color": "NCS S 4746-Y77R",
+			"group": "Ottosson Linoljefärg"
+		},
+		{
+			"name": "Faluröd",
+			"color": "NCS S 4941-Y79R",
+			"group": "Ottosson Linoljefärg"
+		},
+		{
+			"name": "Mörk Järnoxidröd",
+			"color": "NCS S 5536-Y81R",
+			"group": "Ottosson Linoljefärg"
+		},
+		{
+			"name": "Järnmönja",
+			"color": "NCS S 5731-Y78R",
+			"group": "Ottosson Linoljefärg"
+		},
+		{
+			"name": "Caput mortuum",
+			"color": "NCS S 6523-Y97R",
+			"group": "Ottosson Linoljefärg"
+		},
+		{
+			"name": "Öjablå",
+			"color": "NCS S 4918-B20G",
+			"group": "Ottosson Linoljefärg"
+		},
+		{
+			"name": "Koboltblå",
+			"color": "NCS S 4539-R87B",
+			"group": "Ottosson Linoljefärg"
+		},
+		{
+			"name": "Hardebergablå",
+			"color": "NCS S 5311-R78B",
+			"group": "Ottosson Linoljefärg"
+		},
+		{
+			"name": "Ultramarinblå",
+			"color": "NCS S 5742-R66B",
+			"group": "Ottosson Linoljefärg"
+		},
+		{
+			"name": "Bergblå",
+			"color": "NCS S 5919-R98B",
+			"group": "Ottosson Linoljefärg"
+		},
+		{
+			"name": "Per Hans Blå",
+			"color": "NCS S 6022-R82B",
+			"group": "Ottosson Linoljefärg"
+		},
+		{
+			"name": "Ribbangrön",
+			"color": "NCS S 2314-G66Y",
+			"group": "Ottosson Linoljefärg"
+		},
+		{
+			"name": "Antikgrön",
+			"color": "NCS S 4112-G60Y",
+			"group": "Ottosson Linoljefärg"
+		},
+		{
+			"name": "Bladgrön",
+			"color": "NCS S 4820-G27Y",
+			"group": "Ottosson Linoljefärg"
+		},
+		{
+			"name": "Kromoxidgrön",
+			"color": "NCS S 5433-G25Y",
+			"group": "Ottosson Linoljefärg"
+		},
+		{
+			"name": "Thottgrön",
+			"color": "NCS S 5530-G30Y",
+			"group": "Ottosson Linoljefärg"
+		},
+		{
+			"name": "Övedsgrön",
+			"color": "NCS S 5919-G37Y",
+			"group": "Ottosson Linoljefärg"
+		},
+		{
+			"name": "Skruttgrön",
+			"color": "NCS S 6717-G28Y",
+			"group": "Ottosson Linoljefärg"
+		},
+		{
+			"name": "Köpenhamnsgrön",
+			"color": "NCS S 7116-G37Y",
+			"group": "Ottosson Linoljefärg"
+		},
+		{
+			"name": "Köpenhamnsgrön LYS",
+			"color": "NCS S 7215-G14Y",
+			"group": "Ottosson Linoljefärg"
+		},
+		{
+			"name": "Ardbeg Green",
+			"color": "NCS S 7313-G71Y",
+			"group": "Ottosson Linoljefärg"
+		},
+		{
+			"name": "Bränd Terra",
+			"color": "NCS S 5338-Y68R",
+			"group": "Ottosson Linoljefärg"
+		},
+		{
+			"name": "Järnoxidbrun",
+			"color": "NCS S 8107-Y76R",
+			"group": "Ottosson Linoljefärg"
+		},
+		{
+			"name": "Bränd Umbra",
+			"color": "NCS S 8404-Y73R",
+			"group": "Ottosson Linoljefärg"
+		},
+		{
+			"name": "Ombre Naturelle",
+			"color": "NCS S 8505-Y10R",
+			"group": "Ottosson Linoljefärg"
+		},
+		{
+			"name": "Järnoxidsvart",
+			"color": "NCS S 8901-R65B",
+			"group": "Ottosson Linoljefärg"
+		},
+		{
+			"name": "Bensvart",
+			"color": "NCS S 9100-N",
+			"group": "Ottosson Linoljefärg"
+		}
+	]
+}

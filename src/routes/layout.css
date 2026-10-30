@@ -1,0 +1,174 @@
+@import 'tailwindcss';
+
+@theme {
+	--font-sans:
+		Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+	/* Brand: muted sage-green window joinery, used for active and focus states */
+	--color-primary-50: #f3f7f2;
+	--color-primary-100: #e3ede2;
+	--color-primary-200: #c8ddc7;
+	--color-primary-300: #a5c5a5;
+	--color-primary-400: #80a981;
+	--color-primary-500: #678f69;
+	--color-primary-600: #517453;
+	--color-primary-700: #425d44;
+	--color-primary-800: #374b39;
+	--color-primary-900: #2f3f31;
+	--color-primary-950: #172219;
+
+	/* Night: the deep ground the glass floats on */
+	--color-night-800: #1a1f1c;
+	--color-night-900: #111412;
+	--color-night-950: #090b0a;
+
+	--color-danger-300: #fca5a5;
+	--color-danger-400: #f87171;
+	--color-danger-500: #ef4444;
+	--color-danger-600: #dc2626;
+
+	--animate-rise: rise 0.35s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+
+	@keyframes rise {
+		from {
+			opacity: 0;
+			transform: translateY(8px) scale(0.985);
+		}
+	}
+}
+
+/* Frosted panel: translucent fill, hairline border and a top highlight like the edge of a pane. */
+@utility glass {
+	background-color: rgb(255 255 255 / 0.055);
+	background-image: linear-gradient(150deg, rgb(255 255 255 / 0.09), rgb(255 255 255 / 0) 55%);
+	border: 1px solid rgb(255 255 255 / 0.1);
+	box-shadow:
+		inset 0 1px 0 0 rgb(255 255 255 / 0.09),
+		0 30px 60px -30px rgb(0 0 0 / 0.65);
+	backdrop-filter: blur(28px) saturate(160%);
+	-webkit-backdrop-filter: blur(28px) saturate(160%);
+}
+
+/* Denser glass for overlays that sit above other glass. */
+@utility glass-strong {
+	background-color: rgb(20 24 22 / 0.78);
+	background-image: linear-gradient(150deg, rgb(255 255 255 / 0.08), rgb(255 255 255 / 0) 55%);
+	border: 1px solid rgb(255 255 255 / 0.12);
+	box-shadow:
+		inset 0 1px 0 0 rgb(255 255 255 / 0.1),
+		0 40px 80px -20px rgb(0 0 0 / 0.75);
+	backdrop-filter: blur(40px) saturate(170%);
+	-webkit-backdrop-filter: blur(40px) saturate(170%);
+}
+
+/* A recessed well inside a panel. */
+@utility well {
+	background-color: rgb(0 0 0 / 0.2);
+	border: 1px solid rgb(255 255 255 / 0.06);
+	box-shadow: inset 0 1px 2px rgb(0 0 0 / 0.25);
+}
+
+/* Colour chip: the colour plus a soft sheen so flat swatches read as a surface. */
+@utility chip {
+	background-image: linear-gradient(160deg, rgb(255 255 255 / 0.22), rgb(255 255 255 / 0) 45%);
+	box-shadow:
+		inset 0 0 0 1px rgb(255 255 255 / 0.14),
+		inset 0 -10px 20px -10px rgb(0 0 0 / 0.35);
+}
+
+html {
+	color-scheme: dark;
+	background: var(--color-night-950);
+}
+
+body {
+	margin: 0;
+	min-width: 320px;
+	font-family: var(--font-sans);
+	color: white;
+	-webkit-font-smoothing: antialiased;
+}
+
+button {
+	cursor: pointer;
+}
+
+::selection {
+	background: rgb(165 197 165 / 0.4);
+}
+
+@layer components {
+	/* Range input with a track painted from `--track` (any CSS background). */
+	.slider {
+		appearance: none;
+		width: 100%;
+		height: 1.25rem;
+		background: transparent;
+		cursor: pointer;
+
+		&::-webkit-slider-runnable-track {
+			height: 0.5rem;
+			border-radius: 999px;
+			background: var(--track, rgb(255 255 255 / 0.15));
+			box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.12);
+		}
+		&::-moz-range-track {
+			height: 0.5rem;
+			border-radius: 999px;
+			background: var(--track, rgb(255 255 255 / 0.15));
+			box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.12);
+		}
+		&::-webkit-slider-thumb {
+			appearance: none;
+			margin-top: -0.375rem;
+			width: 1.25rem;
+			height: 1.25rem;
+			border-radius: 999px;
+			background: white;
+			box-shadow:
+				0 0 0 3px rgb(0 0 0 / 0.25),
+				0 4px 10px rgb(0 0 0 / 0.4);
+			transition: transform 0.15s;
+		}
+		&::-moz-range-thumb {
+			width: 1.25rem;
+			height: 1.25rem;
+			border: 0;
+			border-radius: 999px;
+			background: white;
+			box-shadow:
+				0 0 0 3px rgb(0 0 0 / 0.25),
+				0 4px 10px rgb(0 0 0 / 0.4);
+		}
+		&:active::-webkit-slider-thumb {
+			transform: scale(1.15);
+		}
+		&:focus-visible {
+			outline: none;
+		}
+		&:focus-visible::-webkit-slider-thumb {
+			box-shadow: 0 0 0 3px var(--color-primary-400);
+		}
+	}
+
+	/* Native colour input stripped down to just its colour. */
+	.color-well {
+		appearance: none;
+		padding: 0;
+		border: 0;
+		background: none;
+		cursor: pointer;
+
+		&::-webkit-color-swatch-wrapper {
+			padding: 0;
+		}
+		&::-webkit-color-swatch {
+			border: 0;
+			border-radius: inherit;
+		}
+		&::-moz-color-swatch {
+			border: 0;
+			border-radius: inherit;
+		}
+	}
+}
