@@ -1,0 +1,19 @@
+services:
+  vibes-fasad:
+    build: .
+    image: vibes-fasad
+    ports:
+      - '3000:3000'
+    environment:
+      ORIGIN: ${ORIGIN:-http://localhost:3000}
+      EMAIL_PEPPER: ${EMAIL_PEPPER:-}
+      SMTP_URL: ${SMTP_URL:-}
+      SMTP_USER: ${SMTP_USER:-}
+      SMTP_PASSWORD: ${SMTP_PASSWORD:-}
+      SMTP_MAIL_FROM: ${SMTP_MAIL_FROM:-}
+    volumes:
+      - data:/data
+    restart: unless-stopped
+
+volumes:
+  data:
