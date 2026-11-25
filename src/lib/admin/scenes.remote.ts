@@ -1,4 +1,4 @@
-import { DIR } from '$app/env/private';
+import { DATA_DIR } from '$app/env/private';
 import { command, form, query } from '$app/server';
 import { error, invalid, redirect } from '@sveltejs/kit';
 import { and, eq, ne, sql } from 'drizzle-orm';
@@ -49,7 +49,7 @@ export const createScene = form(newSceneForm, async ({ name, groupId, sortOrder,
 	const { photo, masks } = await readPhotoUpload(file);
 	if (!photo || !(await validGroup(groupId))) invalid('Invalid scene');
 	const id = crypto.randomUUID();
-	const size = await savePhoto(DIR, id, photo);
+	const size = await savePhoto(DATA_DIR, id, photo);
 	if (!size) invalid('Invalid photo');
 	await db.insert(scene).values({ id, name, groupId, sortOrder, ...size });
 	await importMasks(id, masks);
@@ -71,9 +71,9 @@ export const deleteScene = command(entryId, async (id) => {
 		.from(scenePart)
 		.where(eq(scenePart.sceneId, id));
 	await db.delete(scene).where(eq(scene.id, id));
-	await deletePhotos(DIR, [id]);
+	await deletePhotos(DATA_DIR, [id]);
 	await deleteMasks(
-		DIR,
+		DATA_DIR,
 		parts.map((part) => part.id)
 	);
 });
@@ -88,7 +88,7 @@ export const uploadPhoto = form(
 		assertAdmin();
 		const { photo, masks } = await readPhotoUpload(file);
 		const [found] = await db.select({ id: scene.id }).from(scene).where(eq(scene.id, sceneId));
-		const size = found && photo && (await savePhoto(DIR, found.id, photo));
+		const size = found && photo && (await savePhoto(DATA_DIR, found.id, photo));
 		if (!found || !photo || !size) invalid('Invalid photo');
 		await db
 			.update(scene)
@@ -153,7 +153,7 @@ export const deletePart = command(partRef, async ({ sceneId, partId }) => {
 		.delete(scenePart)
 		.where(partOf(sceneId, partId))
 		.returning({ id: scenePart.id });
-	if (part) await deleteMasks(DIR, [part.id]);
+	if (part) await deleteMasks(DATA_DIR, [part.id]);
 	void getScene(sceneId).refresh();
 });
 
@@ -173,7 +173,7 @@ export const saveMask = form(
 		assertAdmin();
 		const part = await findPart(sceneId, partId);
 		const image = await imageFile(mask);
-		const coverage = part && image && (await writeMask(DIR, part, image));
+		const coverage = part && image && (await writeMask(DATA_DIR, part, image));
 		if (!part || typeof coverage !== 'number') invalid('Invalid mask');
 		await db
 			.update(scenePart)
@@ -188,6 +188,6 @@ export const deleteMask = command(partRef, async ({ sceneId, partId }) => {
 	const part = await findPart(sceneId, partId);
 	if (!part) error(400, 'Invalid part');
 	await db.update(scenePart).set({ maskVersion: null, coverage: 0 }).where(eq(scenePart.id, part));
-	await deleteMasks(DIR, [part]);
+	await deleteMasks(DATA_DIR, [part]);
 	void getScene(sceneId).refresh();
 });

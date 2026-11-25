@@ -1,0 +1,18 @@
+# Settings go into a .env file next to this file, see .env.example.
+
+services:
+  fasad:
+    image: ghcr.io/bztes/vibes-fasad:latest
+    restart: unless-stopped
+    environment:
+      - ORIGIN
+      - EMAIL_PEPPER
+      - SMTP_URL
+      - SMTP_USER
+      - SMTP_PASSWORD
+      - SMTP_MAIL_FROM
+    ports:
+      - '3000:3000'
+    volumes:
+      # Persistent Fasad state: the SQLite database (app.db) and uploaded photos
+      - ${DATA_DIR:-./data}:/data

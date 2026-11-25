@@ -13,8 +13,7 @@ WORKDIR /app
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml .npmrc* ./
 RUN pnpm install --frozen-lockfile
 COPY . .
-# The build validates the env vars (see src/env.ts) but does not inline them: placeholders are enough.
-RUN DATABASE_URL=:memory: pnpm build
+RUN pnpm build
 
 # Dependencies for the target platform: native packages ship per-platform binaries.
 # Only `dependencies`: adapter-node bundles everything else into the build output.
@@ -36,8 +35,7 @@ COPY --from=build /app/drizzle ./drizzle
 ENV NODE_ENV=production \
 	HOST=0.0.0.0 \
 	PORT=3000 \
-	DATABASE_URL=file:/data/local.db \
-	DIR=/data \
+	DATA_DIR=/data \
 	BODY_SIZE_LIMIT=20M
 VOLUME /data
 EXPOSE 3000

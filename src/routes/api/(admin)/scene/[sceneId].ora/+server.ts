@@ -1,4 +1,4 @@
-import { DIR } from '$app/env/private';
+import { DATA_DIR } from '$app/env/private';
 import { error } from '@sveltejs/kit';
 import { asc, eq } from 'drizzle-orm';
 import { ORA_TYPE } from '#lib/fasad/openraster.ts';
@@ -18,7 +18,7 @@ export const GET: RequestHandler = async ({ params }) => {
 		.select({ id: scene.id, name: scene.name })
 		.from(scene)
 		.where(eq(scene.id, params.sceneId));
-	const photo = found && (await readPhoto(DIR, found.id));
+	const photo = found && (await readPhoto(DATA_DIR, found.id));
 	if (!photo) error(404, 'Not found');
 
 	const parts = await db

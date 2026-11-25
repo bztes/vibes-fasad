@@ -1,4 +1,4 @@
-import { DIR } from '$app/env/private';
+import { DATA_DIR } from '$app/env/private';
 import { asc, eq } from 'drizzle-orm';
 import { nextSort, PART_ICONS } from '#lib/fasad/types.ts';
 import { db } from '#lib/server/db/index.ts';
@@ -102,7 +102,7 @@ export async function importMasks(sceneId: string, masks: { name: string; mask: 
 				.returning({ id: scenePart.id });
 			parts.push({ id: partId, layer: part.layer, sortOrder: part.sortOrder });
 		}
-		const coverage = await saveMask(DIR, partId, mask);
+		const coverage = await saveMask(DATA_DIR, partId, mask);
 		if (coverage === undefined) continue;
 		await db
 			.update(scenePart)

@@ -3,10 +3,9 @@ import { defineEnvVars } from '@sveltejs/kit/env';
 const optional = (value: string | undefined) => value || undefined;
 
 export const variables = defineEnvVars({
-	DATABASE_URL: { description: 'The database connection string.' },
-	DIR: {
+	DATA_DIR: {
 		description:
-			'Data directory; uploaded photos go in its `scenes` and `masks` folders, created as needed. Defaults to `./data`.',
+			'Directory for the SQLite database (`app.db`) and uploaded photos (`scenes` and `masks` folders), created as needed. Default `./data`.',
 		schema: (value: string | undefined) => value || './data'
 	},
 	EMAIL_PEPPER: {

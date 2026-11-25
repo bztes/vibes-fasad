@@ -1,4 +1,4 @@
-import { DIR } from '$app/env/private';
+import { DATA_DIR } from '$app/env/private';
 import { asc, eq, inArray, notInArray } from 'drizzle-orm';
 import { strFromU8, strToU8, unzipSync, zipSync } from 'fflate';
 import * as v from 'valibot';
@@ -81,7 +81,7 @@ export async function sceneOra(
 ) {
 	const masks = await Promise.all(
 		parts.map(async (part, index) => {
-			const mask = part.maskVersion === null ? undefined : await readMask(DIR, part.id);
+			const mask = part.maskVersion === null ? undefined : await readMask(DATA_DIR, part.id);
 			return mask ? [{ name: part.layer, color: maskColor(index), mask }] : [];
 		})
 	);
@@ -102,7 +102,7 @@ export async function exportScenes() {
 	const files: Record<string, Uint8Array> = {};
 	const rows = [];
 	for (const row of scenes) {
-		const photo = await readPhoto(DIR, row.id);
+		const photo = await readPhoto(DATA_DIR, row.id);
 		if (!photo) continue;
 		const ofScene = parts.filter((part) => part.sceneId === row.id);
 		const sceneParts = ofScene.map(({ id, layer, name, hint, icon, sortOrder }) => ({
@@ -198,7 +198,7 @@ async function writeScenes(
 			throw new ImportError(`scenes.${index}.groupId: no group ${fields.groupId}`);
 		}
 		const { photo, masks } = layered.get(path)!;
-		const size = await savePhoto(DIR, sceneId, photo);
+		const size = await savePhoto(DATA_DIR, sceneId, photo);
 		if (!size) throw new ImportError(`${path}: unreadable photo`);
 		const row = {
 			...fields,
@@ -254,7 +254,7 @@ async function writeScenes(
 		}
 
 		for (const { mask, ...part } of parts) {
-			const coverage = mask ? await saveMask(DIR, part.id, mask) : undefined;
+			const coverage = mask ? await saveMask(DATA_DIR, part.id, mask) : undefined;
 			if (mask && coverage === undefined) throw new ImportError(`${path}: unreadable layer`);
 			if (!mask) removedParts.push(part.id);
 			const partRow = {
@@ -300,8 +300,8 @@ export async function importScenes(
 		const { removedScenes, removedParts } = await db.transaction((tx) =>
 			writeScenes(tx, parsed.output, layered, replace)
 		);
-		await deletePhotos(DIR, removedScenes);
-		await deleteMasks(DIR, removedParts);
+		await deletePhotos(DATA_DIR, removedScenes);
+		await deleteMasks(DATA_DIR, removedParts);
 		return parsed.output.scenes.length;
 	});
 }
