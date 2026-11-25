@@ -1,4 +1,4 @@
-# vibes-fasad
+# @bztes/vibes-fasad
 
 ## 0.1.0
 

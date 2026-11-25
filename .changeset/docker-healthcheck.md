@@ -1,5 +1,5 @@
 ---
-'vibes-fasad': minor
+'@bztes/vibes-fasad': minor
 ---
 
 Add a Docker health check

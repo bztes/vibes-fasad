@@ -1,5 +1,5 @@
 {
-	"name": "vibes-fasad",
+	"name": "@bztes/vibes-fasad",
 	"private": true,
 	"license": "AGPL-3.0-or-later",
 	"packageManager": "pnpm@12.16.1",
